@@ -15,6 +15,8 @@ def main():
     # fit
     fit =  np.polyfit(x, y, 3)
     p_fit = np.poly1d(fit)
+    print "Real coefficients:", koeffs
+    print "Fitted coefficients:", fit
     # plot
     plt.scatter(x, y)
     plt.plot(x, p_fit(x))

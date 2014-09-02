@@ -8,15 +8,16 @@ from matplotlib import pyplot as plt
 
 
 def main():
-    f = lambda x: .3 * x**3 + 1.2 * x**2 + .1 * x + 7
+    koeffs = .3, 1.2, .1, 7
+    p = np.poly1d(koeffs)
     x = np.linspace(-2, 2, 100)
-    y = f(x) + 2 * np.random.randn(100) - 1
+    y = p(x) + 2 * np.random.randn(100) - 1
     # fit
     fit =  np.polyfit(x, y, 3)
-    p = np.poly1d(fit)
+    p_fit = np.poly1d(fit)
     # plot
     plt.scatter(x, y)
-    plt.plot(x, p(x))
+    plt.plot(x, p_fit(x))
     plt.show()
 
 if __name__ == '__main__':

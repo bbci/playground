@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 
 
 def main():
-    koeffs = .3, 1.2, .1, 7
+    koeffs = [.3, 1.2, .1, 7]
     p = np.poly1d(koeffs)
     x = np.linspace(-2, 2, 100)
     y = p(x) + 2 * np.random.randn(100) - 1

@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
+
 from __future__ import division
 
 import numpy as np
 from matplotlib import pyplot as plt
-
 
 
 def main():

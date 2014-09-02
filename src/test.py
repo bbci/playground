@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 def main():
     koeffs = [.3, 1.2, .1, 7]
     p = np.poly1d(koeffs)
-    x = np.linspace(-2, 2, 100)
+    x = np.linspace(-5, 5, 100)
     y = p(x) + 2 * np.random.randn(100) - 1
     # fit
     fit =  np.polyfit(x, y, 3)
@@ -19,8 +19,9 @@ def main():
     print "Fitted coefficients:", fit
     # plot
     plt.scatter(x, y)
-    plt.plot(x, p_fit(x))
+    plt.plot(x, p_fit(x), 'orange', lw=2)
     plt.show()
+
 
 if __name__ == '__main__':
     main()
